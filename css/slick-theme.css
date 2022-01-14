@@ -95,7 +95,7 @@
   left: -25px;
 }
 .slick-next:before {
-  content: "→";
+  content: "";
 }
 [dir="rtl"] .slick-next:before {
   content: "←";
