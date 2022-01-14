@@ -4,6 +4,8 @@ $(document).ready(function () {
     $("header .nav-bar li.active").removeClass("active");
     $(this).addClass("active");
   });
+  //   revealing animation while scrolling
+  new WOW().init();
 
   $(".slider-hospital").slick({
     dots: true,
@@ -32,7 +34,7 @@ $(document).ready(function () {
         },
       },
       {
-        breakpoint: 480,
+        breakpoint: 481,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
@@ -45,6 +47,7 @@ $(document).ready(function () {
     dots: true,
     infinite: true,
     speed: 300,
+    arrows: false,
     slidesToScroll: 1,
     slidesToShow: 3,
     slidesToScroll: 1,
@@ -68,7 +71,7 @@ $(document).ready(function () {
         },
       },
       {
-        breakpoint: 480,
+        breakpoint: 481,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,

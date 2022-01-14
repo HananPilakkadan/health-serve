@@ -195,6 +195,10 @@ header .login .button:hover {
 }
 header .hamburger {
     display: none;
+    transition: .3s ease-in;
+}
+.active header .hamburger{
+    opacity: 0;
 }
 header .mobile-menu {
     display: none;
@@ -206,7 +210,7 @@ header .mobile-menu {
     width: 40%;
     text-align: right;
     padding: 30px 50px 10px 10px;
-    background: #6f80ad;
+    background: #dfdfdf;
     height: 100vh;
     opacity: 0;
     visibility: hidden;
@@ -221,26 +225,28 @@ header .mobile-menu {
 }
 header .mobile-menu li {
     margin-bottom: 50px;
+    transition: .3s ease-in;
+}
+header .mobile-menu li:hover {
+    opacity: 0.6;
 }
 header .mobile-menu li a {
     font-size: 24px;
     text-transform: capitalize;
-    color: #fff;
+    color: #393939;
 }
 header .mobile-menu .closer {
     display: flex;
     justify-content: flex-end;
 }
 header .mobile-menu .close {
-    color: #000;
-    width: fit-content;
-    font-size: 20px;
-    margin-bottom: 180px;  
-    padding: 16px 18px;  
-    background: #fff;
-    border-radius: 50%;
-    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
-
+    color: #393939;
+    font-size: 26px;
+    margin-bottom: 100px;
+    transition: .3s ease-in;
+}
+header .mobile-menu .close:hover {
+    transform: rotate(315deg);
 }
 /* sticky-header */
 .sticky header {
@@ -270,7 +276,8 @@ span.overlay {
     z-index: 33;
     display: block;
     height: 100vh;
-    background: rgba(0, 0, 0, 0.486);
+    background: rgba(0, 0, 0, 0.651);
+    backdrop-filter: blur(5px);
     opacity: 0;
     visibility: hidden;
     transition: .3s ease-in;
@@ -340,14 +347,14 @@ main .main-text .button:hover {
 }
 #about .image-box {
   width: 40%;
-  margin-right: 50px;
+  margin-right: 80px;
 }
 #about .image-box img {
   width: 100%;
   display: block;
 }
 #about .text-box {
-  width: 45%;
+  width: 36%;
 }
 #about .text-box small {
   display: inline-block;
@@ -373,7 +380,7 @@ main .main-text .button:hover {
 #about .text-box p {
   color: #828282;
   line-height: 1.4em;
-  width: 80%;
+  width: 100%;
   margin-bottom: 24px;
 }
 #about .text-box .button {
@@ -625,9 +632,8 @@ main .main-text .button:hover {
   color: #6b5ea6;
 }
 #hospitals ul {
-  /* display: flex; */
+  display: flex;
   align-items: center;
-  justify-content: center;
 }
 #hospitals ul .slides {
   cursor: pointer;
@@ -724,7 +730,6 @@ main .main-text .button:hover {
 }
 #doctors ul {
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
 }
 #doctors .container .items {
@@ -872,6 +877,7 @@ footer .bottom {
   border-top: 1px solid #fff;
 }
 footer .bottom p {
+    line-height: 1.5em;
   color: #fff;
 }
 footer .bottom p span a {
@@ -923,6 +929,9 @@ footer .gotop a {
     left: -160px;
 }
 @media all and (max-width: 980px) {
+    header .wrapper {
+        height: 90px;
+    }
     .sticky header .wrapper {
         display: flex;
         align-items: center;
@@ -1015,6 +1024,22 @@ footer .gotop a {
     }
 }
 @media all and (max-width: 640px) {
+    header .wrapper{
+        height: 80px;
+    }
+    .active header .wrapper{
+        height: 80px;
+    }
+    header .login .button {
+        padding: 10px 20px;
+    }
+    main {
+        height: calc(100vh - 80px);
+        background-position: center;
+    }
+    main .main-text {
+        width: 90%;
+    }
     main .main-text h2 {
         font-size: 36px;
     }
@@ -1068,5 +1093,211 @@ footer .gotop a {
         right: 90%;
         top: -678px;
     }
-
+    
+}
+@media all and (max-width: 480px) {
+    header .logo h1 {
+        width: 120px;
+    }
+    header .login .button{
+        font-size: 16px;
+    }
+    header .hamburger {
+        font-size: 26px;
+    }
+    header .mobile-menu {
+        width: 76%;
+    }
+    #about .text-box {
+        text-align: center;
+    }
+    #about .text-box small{
+        font-size: 14px;
+    }
+    main .main-text h2 {
+        font-size: 34px;
+    }
+    #about .text-box h2 {
+        font-size: 34px;
+        width: 100%;
+    }
+    #about .text-box .button {
+        font-size: 14px;
+    }
+    #about .image-box{
+        width: 60%;
+    }
+    #count{
+        padding: 50px 0;
+    }
+    #count ul li h3 {
+        font-size: 26px;
+    }
+    #services .head h2 {
+        font-size: 34px;
+    }
+    #hospitals ul .slides{
+        margin-right: 0;
+    }
+    #hospitals .head h2 {
+        font-size: 34px;
+    }
+    #doctors .head h2 {
+        font-size: 34px;
+    }
+    #doctors .container .items {
+        margin-right: 0;
+    }
+    footer .wrapper .top .menu-box .contact li{
+        width: 100%;
+    }
+    footer .bottom{
+        padding: 16px 0 10px;
+    }
+    footer .bottom p {
+        font-size: 13px;
+    }
+    
+    
+}
+@media all and (max-width: 480px) {
+    footer .wrapper .top .menu-box .items{
+        width: 100%;
+    }
+    footer  {
+        padding: 15% 0 1% 0;
+    }
+}
+@media all and (max-width: 360px) {
+    header .wrapper{
+        height: 65px;
+    }
+    .sticky header .wrapper {
+        height: 70px;
+    }
+    header .login .button {
+        font-size: 14px;
+    }
+    header .mobile-menu{
+        width: 100%;
+    }
+    main {
+        height: calc(100vh - 65px);
+    }
+    main .main-text {
+        width: 100%;
+    }
+    main .main-text h2{
+        font-size: 30px;
+    }
+    #about  {
+        padding: 18% 0;
+    }
+    #about .image-box {
+        width: 70%;
+    }
+    #about .text-box h2 {
+        font-size: 26px;
+    }
+    #about .text-box p {
+        font-size: 14px;
+    }
+    #count {
+        padding: 50px 0;
+    }
+    #count ul li{
+        width: 100%;
+    }
+    #process  {
+        padding: 15% 0 18% 0;
+    }
+    #process .head .vector {
+        left: 6%;
+    }
+    #process .head h2{
+        font-size: 26px;
+    }
+    #process .content {
+        margin-top: 24px;
+    }
+    #process .content .item {
+        width: 100%;
+    }
+    #services {
+        padding: 15% 0 14% 0;
+    }
+    #services .head .vector{
+        right: 74%;
+    }
+    #services .side-vector {
+        width: 140px;
+    }
+    #services .head h2 {
+        font-size: 26px;
+    }
+    #services .head p {
+        font-size: 14px;
+    }
+    #hospitals {
+        padding: 14% 0 25% 0
+    }
+    #hospitals .head {
+        margin-bottom: 24px;
+    }
+    #hospitals .head h2 {
+        font-size: 26px;
+    }
+    #hospitals .head .vector{
+        width: 100px;
+        left: -42px;
+        top: -12px;
+    }
+    #hospitals ul li .button a {
+        font-size: 14px;
+    }
+    #doctors .head h2 {
+        font-size: 26px;
+    }
+    #doctors .head{
+        margin-bottom: 24px;
+    }
+    #doctors .head .vector{
+        width: 100px;
+        left: -42px;
+        top: -12px;
+    }
+    #doctors {
+        padding: 14% 0 25% 0
+    }
+    #doctors .container .items span {
+        font-size: 10px;
+    }
+    footer  {
+        padding: 18% 0 1% 0;
+    }
+    footer .wrapper .top .logo-box h1 {
+        width: 140px;
+    }
+    footer .wrapper .top .logo-box .social li {
+        width: 26px;
+    }
+    footer .wrapper .top .menu-box .items {
+        width: 100%;
+        margin-right: 0;
+    }
+        
+}
+@media all and (max-width: 320px){
+    #process .content .item p{
+        width: 100%;
+    }
+    #process .content .item .top {
+        width: 50px;
+    }
+    #process .content .item h4 {
+        width: 100%;
+    }
+    #hospitals ul li .tags span {
+        font-size: 8px;
+    }
 }
