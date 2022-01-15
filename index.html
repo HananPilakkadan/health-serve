@@ -31,7 +31,7 @@
     <script src="./js/jquery-min.js"></script>
     <script src="./js/slick.min.js"></script>
     <script src="./js/wow.min.js"></script>
-    <script src="./js/script.js"></script>
+    <script src="./js/script.js" defer></script>
 
     <!-- favicon -->
     <link rel="icon" href="./images/logo.svg" />
@@ -44,15 +44,19 @@
             <a href="#"><img src="./images/logo.svg" alt="Logo" /></a>
           </h1>
         </div>
-        <ul class="nav-bar">
-          <li class="active"><a href="#" class="home">home</a></li>
-          <li><a href="#about">about us</a></li>
-          <li><a href="#services">services</a></li>
-          <li><a href="#footer">contact us</a></li>
+        <ul class="nav-bar" id="menu">
+          <li>
+            <a data-scroll="home" href="#" class="home active">home</a>
+          </li>
+          <li><a data-scroll="about" href="#about">about us</a></li>
+          <li><a data-scroll="services" href="#services">services</a></li>
+          <li>
+            <a data-scroll="contact" class="con" href="#footer">contact us</a>
+          </li>
         </ul>
-        <div class="login">
+        <!-- <div class="login">
           <a href="javascript:void(0)" class="button">login</a>
-        </div>
+        </div> -->
         <div class="hamburger">
           <i class="fas fa-bars"></i>
         </div>
@@ -82,13 +86,13 @@
             dictum velit. Varius sit nunc, mi, et. Dictumst turpis sed sapien
             porttitor id justo, penatibus congue. Placerat maecenas vestibulum.
           </p>
-          <a href="#" class="button wow fadeInUp" data-wow-delay=".3s"
+          <!-- <a href="#" class="button wow fadeInUp" data-wow-delay=".3s"
             >consult</a
-          >
+          > -->
         </div>
       </div>
     </main>
-    <section id="about">
+    <section id="about" data-anchor="about">
       <div class="wrapper">
         <div class="image-box">
           <img src="./images/about.png" alt="About-image" />
@@ -105,9 +109,9 @@
             Sollicitudin nisi, nunc cursus auctor. Ultricies nam justo nulla
             pretium proin quis arcu adipiscing. Sed.
           </p>
-          <a href="#" class="button wow fadeInUp" data-wow-delay=".4s"
+          <!-- <a href="#" class="button wow fadeInUp" data-wow-delay=".4s"
             >read more</a
-          >
+          > -->
         </div>
       </div>
     </section>
@@ -119,19 +123,31 @@
       <div class="wrapper">
         <ul>
           <li class="wow fadeInUp">
-            <h3>50+</h3>
+            <div class="top">
+              <h3 class="counting" data-count="50">0</h3>
+              <small>+</small>
+            </div>
             <span>countries</span>
           </li>
           <li class="wow fadeInUp" data-wow-delay=".2s">
-            <h3>100+</h3>
+            <div class="top">
+              <h3 class="counting" data-count="100">0</h3>
+              <small>+</small>
+            </div>
             <span>states</span>
           </li>
           <li class="wow fadeInUp" data-wow-delay=".3s">
-            <h3>250+</h3>
+            <div class="top">
+              <h3 class="counting" data-count="250">0</h3>
+              <small>+</small>
+            </div>
             <span>hospitals</span>
           </li>
           <li class="wow fadeInUp" data-wow-delay=".4s">
-            <h3>850+</h3>
+            <div class="top">
+              <h3 class="counting" data-count="850">0</h3>
+              <small>+</small>
+            </div>
             <span>doctors</span>
           </li>
         </ul>
@@ -192,7 +208,7 @@
     </section>
     <!-- process end -->
 
-    <section id="services">
+    <section id="services" data-anchor="services">
       <div class="wrapper">
         <div class="head">
           <h2><span>medical services </span>we provide</h2>
@@ -455,8 +471,11 @@
       </div>
     </section>
     <!-- doctor-end -->
-    <footer id="footer">
+    <footer id="footer" data-anchor="contact">
       <div class="wrapper">
+        <div class="gotop">
+          <a href="#home"><i class="fas fa-long-arrow-alt-up"></i></a>
+        </div>
         <div class="top">
           <div class="logo-box">
             <h1>
@@ -473,6 +492,11 @@
               <li>
                 <a href="#"
                   ><img src="./images/twitter-icon.svg" alt="Twitter"
+                /></a>
+              </li>
+              <li>
+                <a href="#"
+                  ><img src="./images/instagram.svg" alt="Instagram"
                 /></a>
               </li>
               <li>
@@ -536,16 +560,14 @@
             </div>
           </div>
         </div>
-        <div class="gotop">
-          <a href="#home"><i class="fas fa-long-arrow-alt-up"></i></a>
-        </div>
       </div>
       <div class="bottom">
         <p>
           &copy; 2021 Healthserve.All right reseved | Developed by
-          <span><a href="https://talrop.com" target="_blank">Talrop</a></span>
+          <span><a href="https://tegain.com" target="_blank">Tegain</a></span>
         </p>
       </div>
     </footer>
+    <!-- footer-end -->
   </body>
 </html>

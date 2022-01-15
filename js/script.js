@@ -1,7 +1,7 @@
 $(document).ready(function () {
   // activating nav-menu elements
-  $("header .nav-bar li").click(function () {
-    $("header .nav-bar li.active").removeClass("active");
+  $("header .nav-bar li a").click(function () {
+    $("header .nav-bar li a.active").removeClass("active");
     $(this).addClass("active");
   });
   //   revealing animation while scrolling
@@ -115,4 +115,27 @@ $(document).ready(function () {
     });
   }
   MobileMenu();
+
+  // counting-cards
+  $(".counting").each(function () {
+    var $this = $(this),
+      countTo = $this.attr("data-count");
+
+    $({ countNum: $this.text() }).animate(
+      {
+        countNum: countTo,
+      },
+
+      {
+        duration: 3000,
+        easing: "linear",
+        step: function () {
+          $this.text(Math.floor(this.countNum));
+        },
+        complete: function () {
+          $this.text(this.countNum);
+        },
+      }
+    );
+  });
 });
